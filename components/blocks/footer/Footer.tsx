@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { footerData } from "@/constants/footer";
 import type { FooterLink } from "@/constants/footer";
+import Image from "next/image";
 
 export function Footer() {
     const handleScroll = (targetId: string) => {
@@ -81,13 +82,18 @@ export function Footer() {
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-medium mb-4">
                             {footerData.brand.badge}
                         </div>
-                        <span className="text-2xl sm:text-3xl text-white mb-4 block font-light">
-                            <span className="font-medium">{footerData.brand.name}</span>.Space
-                        </span>
-                        <p className="text-gray-400 text-sm leading-relaxed max-w-md mb-4">
-                            {footerData.brand.description}
-                        </p>
-                        <div className="flex items-center gap-2 text-gray-400 text-xs">
+
+                        <div className="flex items-center gap-4">
+                            <Image
+                                src="/images/libly-space-logo.png"
+                                alt="libly space logo"
+                                height={30}
+                                width={30}
+                            />
+                            <span className="font-medium text-2xl">libly<span className="font-semibold">.space</span></span>
+                        </div>
+
+                        <div className="flex items-center gap-2 text-gray-400 text-xs mt-2">
                             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                             {footerData.brand.status}
                         </div>
