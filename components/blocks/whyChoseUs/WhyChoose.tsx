@@ -3,8 +3,8 @@ import { whyChoosePoints } from "@/constants/whyChoose";
 
 const WhyChoose = () => {
     return (
-        <div className="max-w-6xl h-screen justify-center content-center mx-auto py-16 sm:py-20">
-            <div className="w-full">
+        <div id="why-choose" className="w-full mx-auto py-16 sm:py-36 px-4 sm:px-6 lg:px-8 bg-black/5">
+            <div className="max-w-6xl items-center justify-center mx-auto">
                 {/* Header Section */}
                 <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
                     <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-4">
@@ -26,7 +26,7 @@ const WhyChoose = () => {
                             icon={whyChoosePoints[0].icon}
                             title={whyChoosePoints[0].title}
                             description={whyChoosePoints[0].description}
-                            large
+                            size="large"
                         />
                     </div>
 
@@ -36,27 +36,27 @@ const WhyChoose = () => {
                             icon={whyChoosePoints[1].icon}
                             title={whyChoosePoints[1].title}
                             description={whyChoosePoints[1].description}
-                            small
+                            size="small"
                         />
                     </div>
 
-                    {/* Medium Horizontal Card - Middle */}
+                    {/* Medium Horizontal Card - Middle Left */}
                     <div className="md:col-span-6 lg:col-span-5 group">
                         <WhyChooseCard
                             icon={whyChoosePoints[2].icon}
                             title={whyChoosePoints[2].title}
                             description={whyChoosePoints[2].description}
-                            medium
+                            size="medium"
                         />
                     </div>
 
-                    {/* Small Square Card - Middle Right */}
+                    {/* Medium Vertical Card - Middle Right */}
                     <div className="md:col-span-3 lg:col-span-4 group">
                         <WhyChooseCard
                             icon={whyChoosePoints[3].icon}
                             title={whyChoosePoints[3].title}
                             description={whyChoosePoints[3].description}
-                            small
+                            size="medium"
                         />
                     </div>
 
@@ -66,7 +66,7 @@ const WhyChoose = () => {
                             icon={whyChoosePoints[4].icon}
                             title={whyChoosePoints[4].title}
                             description={whyChoosePoints[4].description}
-                            small
+                            size="small"
                         />
                     </div>
                 </div>

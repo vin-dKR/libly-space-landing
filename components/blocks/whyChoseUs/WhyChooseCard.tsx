@@ -2,38 +2,70 @@ interface WhyChooseCardProps {
     icon: string;
     title: string;
     description: string;
-    large?: boolean;
-    medium?: boolean;
-    small?: boolean;
+    size: 'small' | 'medium' | 'large';
 }
 
-const WhyChooseCard = ({ icon, title, description, large, medium, small }: WhyChooseCardProps) => {
-    const sizeClass = large ? 'h-64' : medium ? 'h-48' : 'h-48';
+const WhyChooseCard = ({ icon, title, description, size }: WhyChooseCardProps) => {
+    const sizeClasses = {
+        small: 'min-h-[200px] sm:min-h-[220px]',
+        medium: 'min-h-[240px] sm:min-h-[260px]',
+        large: 'min-h-[280px] sm:min-h-[320px]'
+    };
+
+    const contentSizes = {
+        small: 'text-base',
+        medium: 'text-lg',
+        large: 'text-xl'
+    };
 
     return (
-        <div className={`relative rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm overflow-hidden transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg ${sizeClass}`}>
-            {/* Background Gradient on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className={`relative rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm overflow-hidden transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-xl h-full ${sizeClasses[size]} group`}>
+            {/* Animated Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-gray-50/50 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"></div>
 
-            <div className="relative p-6 h-full flex flex-col">
-                {/* Icon */}
-                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-xl">{icon}</span>
+            {/* Floating Particles */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+                <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-sky-400 rounded-full animate-ping delay-300"></div>
+            </div>
+
+            <div className="relative p-6 h-full flex flex-col z-10">
+                {/* Icon with Enhanced Animation */}
+                <div className="relative mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-sky-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg relative overflow-hidden border border-black/20">
+                        {/* Shine Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <span className="text-white text-xl relative z-10 group-hover:scale-110 transition-transform duration-300">
+                            {icon}
+                        </span>
+                    </div>
+                    {/* Floating Dot */}
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500 delay-200"></div>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 flex flex-col">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300">
+                {/* Content with Staggered Animation */}
+                <div className="flex-1 flex flex-col space-y-3">
+                    <h3 className={`font-semibold text-gray-900 group-hover:text-gray-800 transition-colors duration-300 transform group-hover:translate-x-1 ${contentSizes[size]}`}>
                         {title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
+                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300 transform group-hover:translate-x-1 delay-100">
                         {description}
                     </p>
                 </div>
 
-                {/* Hover Border Effect */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gray-100 transition-all duration-300"></div>
+                {/* Bottom Indicator */}
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
+                    <div className="w-6 h-1 bg-gradient-to-r from-blue-500 to-sky-400 rounded-full mx-auto transform group-hover:scale-x-125 transition-transform duration-300"></div>
+                </div>
             </div>
+
+            {/* Enhanced Border Effects */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-200/50 transition-all duration-500"></div>
+            <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-white/80 transition-all duration-500 delay-100"></div>
+
+            {/* Corner Accents */}
+            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-blue-300 rounded-tl-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-sky-300 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"></div>
         </div>
     );
 };
