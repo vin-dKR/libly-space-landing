@@ -55,7 +55,7 @@ export function Pricing() {
                             <div className="space-y-3">
                                 {freeFeatures.map((feature: string, index: number) => (
                                     <div key={index} className="flex items-start gap-3 group/item">
-                                        <div className="w-5 h-5 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform duration-300">
+                                        <div className="w-5 h-5 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:scale-120 transition-transform duration-300">
                                             <Check className="w-3 h-3 text-gray-600" />
                                         </div>
                                         <span className="text-gray-700 text-sm">{feature}</span>
@@ -68,14 +68,15 @@ export function Pricing() {
                     {/* Pro Tier - Featured */}
                     <div className="group relative">
                         {/* Popular Badge */}
-                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10">
+                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10 group-hover:top-[-20px] transition-all duration-300">
                             <div className="bg-black text-white px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 shadow-lg">
                                 <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"></div>
                                 Most Popular
                             </div>
                         </div>
 
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black rounded-2xl transform group-hover:scale-[1.02] transition-all duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-800/30 to-transparent rounded-2xl transform group-hover:scale-[1.02] transition-all duration-300"></div>
+
                         <div className="relative rounded-2xl bg-gradient-to-br from-gray-900 to-black p-5 sm:p-6 text-white transition-all duration-300 group-hover:shadow-xl h-full">
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-gray-200 transition-colors duration-300">
@@ -132,7 +133,7 @@ export function Pricing() {
                             <div className="space-y-3">
                                 {proFeatures.map((feature: string, index: number) => (
                                     <div key={index} className="flex items-start gap-3 group/item">
-                                        <div className="w-5 h-5 bg-white/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform duration-300 backdrop-blur-sm">
+                                        <div className="w-5 h-5 bg-white/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:scale-120 transition-transform duration-300 backdrop-blur-sm">
                                             <Check className="w-3 h-3 text-white" />
                                         </div>
                                         <span className="text-gray-200 text-sm">{feature}</span>

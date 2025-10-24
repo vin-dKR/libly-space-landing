@@ -1,5 +1,7 @@
 import Comparison from "@/components/blocks/comparisions/Comparison";
+import Contact from "@/components/blocks/contact/Contact";
 import Features from "@/components/blocks/features/Features";
+import CTASection from "@/components/blocks/footer/CTASection";
 import { Footer } from "@/components/blocks/footer/Footer";
 import Hero from "@/components/blocks/hero/Hero";
 import Navbar from "@/components/blocks/hero/Navbar";
@@ -17,6 +19,8 @@ export default function Home() {
             <WhyChoose />
             <HowItWorks />
             <Pricing />
+            <Contact />
+            <CTASection />
             <Footer />
         </div>
     );
