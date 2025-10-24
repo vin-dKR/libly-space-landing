@@ -52,7 +52,7 @@ export const comparisonPoints: ComparisonPoint[] = [
     },
     {
         id: 10,
-        traditional: "-",
+        traditional: "",
         liblySpace: "Easy to set up and simple to use — no tech skills needed"
     }
 ];

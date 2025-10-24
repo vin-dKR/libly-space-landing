@@ -3,7 +3,7 @@ import ComparisonCard from "./ComparisonCard";
 
 const Comparison = () => {
     return (
-        <div className="mt-16 sm:mt-24 md:mt-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="comparison" className="mt-30 py-16 sm:py-24 md:py-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header Section - Compact */}
             <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
                 <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-4">
@@ -82,6 +82,5 @@ const Comparison = () => {
         </div>
     );
 };
-
 
 export default Comparison;
