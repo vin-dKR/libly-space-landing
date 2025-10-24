@@ -12,11 +12,50 @@ const Contact = () => {
         subject: "",
         message: ""
     })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Handle form submission here
-        console.log(formData)
+        setIsSubmitting(true)
+        setSubmitStatus("idle")
+
+        try {
+            // Create email content
+            const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Sent from Libly.Space Contact Form
+            `.trim()
+
+            // Create mailto link
+            const mailtoLink = `mailto:vinodkumarmurmu62@gmail.com?subject=${encodeURIComponent(`Libly.Space Contact: ${formData.subject}`)}&body=${encodeURIComponent(emailBody)}`
+
+            // Open email client
+            window.location.href = mailtoLink
+
+            setSubmitStatus("success")
+
+            // Reset form after successful submission
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: ""
+            })
+
+        } catch (error) {
+            console.error('Error sending message:', error)
+            setSubmitStatus("error")
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,17 +66,17 @@ const Contact = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
+        <div id="contact" className="min-h-screen bg-blue-50/30 py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto mx-20">
                 {/* Header Section */}
                 <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
-                    <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-4">
+                    <div className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-blue-100 text-blue-600 text-xs font-medium mb-4 border border-blue-200">
                         💬 GET IN TOUCH
                     </div>
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight mb-3 max-w-3xl">
-                        Let's <span className="font-medium">Talk</span> About Your Library
+                        Let's <span className="font-medium bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">Talk</span> About Your Library
                     </h1>
-                    <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl">
                         Ready to transform your library management? We're here to help you get started.
                     </p>
                 </div>
@@ -52,46 +91,47 @@ const Contact = () => {
                                     icon: <Phone className="w-5 h-5" />,
                                     title: "Call Us",
                                     description: "+91 98765 43210",
-                                    subtitle: "Mon to Fri, 9AM to 6PM"
+                                    subtitle: "Mon to Fri, 9AM to 6PM",
+                                    color: "bg-blue-500"
                                 },
                                 {
                                     icon: <Mail className="w-5 h-5" />,
                                     title: "Email Us",
                                     description: "hello@libly.space",
-                                    subtitle: "We reply within 24 hours"
+                                    subtitle: "We reply within 24 hours",
+                                    color: "bg-sky-500"
                                 },
                                 {
                                     icon: <MapPin className="w-5 h-5" />,
                                     title: "Visit Us",
                                     description: "India",
-                                    subtitle: "Serving libraries nationwide"
+                                    subtitle: "Serving libraries nationwide",
+                                    color: "bg-blue-600"
                                 },
                                 {
                                     icon: <MessageCircle className="w-5 h-5" />,
                                     title: "Live Chat",
                                     description: "Start chatting",
-                                    subtitle: "Available 24/7 for support"
+                                    subtitle: "Available 24/7 for support",
+                                    color: "bg-sky-600"
                                 }
                             ].map((item, index) => (
                                 <div key={index} className="relative group">
-                                    <div className="absolute inset-0 bg-gradient-to-b from-gray-800/20 to-transparent rounded-2xl 
+                                    <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-sky-500/10 rounded-2xl 
                                 transform scale-100 group-hover:scale-y-[1.04] group-hover:scale-x-[1.02] 
                                 transition-all duration-500 ease-out 
                                 origin-bottom z-0 opacity-0 group-hover:opacity-100"
                                     />
-                                    <div className="relative rounded-2xl border border-gray-200 bg-white backdrop-blur-sm p-5 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg h-full">
-                                        {/* Background gradient - appears on hover */}
-
-                                        {/* Content - positioned above background */}
+                                    <div className="relative rounded-2xl border border-blue-100 bg-white/80 backdrop-blur-sm p-5 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg h-full">
                                         <div className="relative z-10">
                                             <div className="flex items-start gap-4">
-                                                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                                                <div className={`w-12 h-12 ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                                                     <div className="text-white">
                                                         {item.icon}
                                                     </div>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <h3 className="font-semibold text-gray-900 text-sm mb-1 group-hover:text-gray-700 transition-colors duration-300">
+                                                    <h3 className="font-semibold text-gray-900 text-sm mb-1 group-hover:text-gray-800 transition-colors duration-300">
                                                         {item.title}
                                                     </h3>
                                                     <p className="text-gray-900 text-base font-medium mb-1">
@@ -111,13 +151,13 @@ const Contact = () => {
                         {/* Stats */}
                         <div className="grid grid-cols-2 gap-4 mt-6">
                             {[
-                                { number: "24h", label: "Avg Response" },
-                                { number: "1000+", label: "Libraries" },
-                                { number: "99%", label: "Satisfaction" },
-                                { number: "5min", label: "Setup Time" }
+                                { number: "24h", label: "Avg Response", color: "text-blue-600" },
+                                { number: "1000+", label: "Libraries", color: "text-sky-600" },
+                                { number: "99%", label: "Satisfaction", color: "text-green-600" },
+                                { number: "5min", label: "Setup Time", color: "text-blue-500" }
                             ].map((stat, index) => (
-                                <div key={index} className="text-center p-4 rounded-2xl bg-white/50 backdrop-blur-sm border border-gray-200">
-                                    <div className="text-lg font-bold text-gray-900">{stat.number}</div>
+                                <div key={index} className="text-center p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-blue-100 group hover:shadow-lg transition-all duration-300">
+                                    <div className={`text-lg font-bold ${stat.color} group-hover:scale-110 transition-transform duration-300`}>{stat.number}</div>
                                     <div className="text-xs text-gray-600 mt-1">{stat.label}</div>
                                 </div>
                             ))}
@@ -126,17 +166,29 @@ const Contact = () => {
 
                     {/* Contact Form - Right Side */}
                     <div className="lg:col-span-7 group">
-                        <div className="relative rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 group-hover:shadow-lg h-full">
+                        <div className="relative rounded-2xl border border-blue-100 bg-white/80 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 group-hover:shadow-lg h-full">
                             {/* Background Gradient on Hover */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                             <div className="relative">
                                 <div className="flex items-center gap-2 mb-6">
-                                    <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-sky-600 rounded-lg flex items-center justify-center">
                                         <Send className="w-4 h-4 text-white" />
                                     </div>
                                     <h2 className="text-xl font-semibold text-gray-900">Send us a message</h2>
                                 </div>
+
+                                {/* Success/Error Messages */}
+                                {submitStatus === "success" && (
+                                    <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                                        <p className="text-green-700 text-sm">Message sent successfully! We'll get back to you soon.</p>
+                                    </div>
+                                )}
+                                {submitStatus === "error" && (
+                                    <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                                        <p className="text-red-700 text-sm">Failed to send message. Please try again or email us directly.</p>
+                                    </div>
+                                )}
 
                                 <form onSubmit={handleSubmit} className="space-y-5">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -151,7 +203,7 @@ const Contact = () => {
                                                 required
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-black focus:ring-1 focus:ring-black group-hover/input:shadow-sm"
+                                                className="w-full rounded-xl border border-blue-200 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 group-hover/input:shadow-sm"
                                                 placeholder="Enter your full name"
                                             />
                                         </div>
@@ -166,7 +218,7 @@ const Contact = () => {
                                                 required
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-black focus:ring-1 focus:ring-black group-hover/input:shadow-sm"
+                                                className="w-full rounded-xl border border-blue-200 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 group-hover/input:shadow-sm"
                                                 placeholder="Enter your email"
                                             />
                                         </div>
@@ -183,7 +235,7 @@ const Contact = () => {
                                             required
                                             value={formData.subject}
                                             onChange={handleChange}
-                                            className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-black focus:ring-1 focus:ring-black group-hover/input:shadow-sm"
+                                            className="w-full rounded-xl border border-blue-200 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 group-hover/input:shadow-sm"
                                             placeholder="What's this about?"
                                         />
                                     </div>
@@ -199,17 +251,27 @@ const Contact = () => {
                                             rows={5}
                                             value={formData.message}
                                             onChange={handleChange}
-                                            className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-black focus:ring-1 focus:ring-black group-hover/input:shadow-sm resize-none"
+                                            className="w-full rounded-xl border border-blue-200 bg-white px-4 py-3 text-sm transition-all duration-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 group-hover/input:shadow-sm resize-none"
                                             placeholder="Tell us about your library needs..."
                                         />
                                     </div>
 
                                     <Button
                                         type="submit"
-                                        className="w-full bg-black text-white hover:bg-gray-800 py-3 rounded-xl font-medium text-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gradient-to-r from-blue-600 to-sky-500 text-white hover:from-blue-700 hover:to-sky-600 py-3 rounded-xl font-medium text-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
-                                        <Send className="w-4 h-4" />
-                                        Send Message
+                                        {isSubmitting ? (
+                                            <>
+                                                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-4 h-4" />
+                                                Send Message
+                                            </>
+                                        )}
                                     </Button>
                                 </form>
 
@@ -219,7 +281,7 @@ const Contact = () => {
                             </div>
 
                             {/* Hover Border Effect */}
-                            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gray-100 transition-all duration-300"></div>
+                            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-200 transition-all duration-300 -z-10"></div>
                         </div>
                     </div>
                 </div>
