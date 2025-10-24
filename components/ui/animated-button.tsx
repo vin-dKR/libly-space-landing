@@ -28,8 +28,8 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
             y: 0,
         },
         hover: {
-            scale: 1.05,
-            y: -2,
+            scale: 1.02,
+            y: -1,
             transition: {
                 type: "spring",
                 stiffness: 400,
