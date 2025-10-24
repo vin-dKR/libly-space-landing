@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/blocks/hero/Navbar";
+import { Footer } from "@/components/blocks/footer/Footer";
 
 export const metadata: Metadata = {
     title: "libly.space",
@@ -16,7 +18,9 @@ export default function RootLayout({
             <body
                 className="font-dmSansReg"
             >
+                <Navbar />
                 {children}
+                <Footer />
             </body>
         </html>
     );

@@ -11,8 +11,8 @@ const CTASection = () => {
                     <div className="absolute inset-0 border-4 border-gray-800 bg-gradient-to-br from-gray-900 to-black rounded-3xl transform group-hover:scale-101 transition-all duration-500 ease-out origin-center"></div>
 
                     {/* Top part that scales more */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-800/30 to-transparent rounded-3xl 
-                        transform group-hover:scale-102 
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-800/80 to-transparent rounded-3xl 
+                        transform group-hover:scale-y-102 group-hover:scale-x-101 
                         transition-all duration-500 ease-out 
                         origin-bottom"
                     />

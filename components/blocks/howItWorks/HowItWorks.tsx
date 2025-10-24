@@ -3,7 +3,7 @@ import { gettingStartedSteps } from "@/constants/howItWorks"
 
 const HowItWorks = () => {
     return (
-        <div className="max-w-6xl h-screen mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-24 md:mt-32">
+        <div id="how-it-works" className="max-w-6xl h-screen mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-24 md:mt-32">
             {/* Header Section */}
             <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
                 <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium mb-4">
