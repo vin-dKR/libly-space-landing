@@ -24,6 +24,8 @@ const Features = () => {
                         <FeatureCard
                             title={feature.title}
                             description={feature.description}
+                            icon={feature.icon}
+                            iconColor={feature.iconColor}
                         />
                     </div>
                 ))}
