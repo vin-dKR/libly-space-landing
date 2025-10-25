@@ -53,7 +53,7 @@ export const heroData: HeroData = {
     },
     dashboard: {
         image: {
-            src: "/images/libly-space-logo.png",
+            src: "/images/libly-space-dash.png",
             alt: "Libly Space Dashboard",
             width: 1200,
             height: 675
