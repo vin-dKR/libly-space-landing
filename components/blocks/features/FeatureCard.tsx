@@ -1,11 +1,13 @@
+import { LucideIcon } from "lucide-react";
+
 interface FeatureCardProps {
     title: string
     description: string
-    icon: string
+    icon: LucideIcon
     iconColor: string
 }
 
-const FeatureCard = ({ title, description, icon, iconColor }: FeatureCardProps) => {
+const FeatureCard = ({ title, description, icon: Icon, iconColor }: FeatureCardProps) => {
     return (
         <div className="relative rounded-2xl border border-gray-300 bg-white/80 backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg h-full flex flex-col group">
             {/* Background Gradient on Hover */}
@@ -17,7 +19,7 @@ const FeatureCard = ({ title, description, icon, iconColor }: FeatureCardProps) 
                     <div className={`w-12 h-12 ${iconColor} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg relative overflow-hidden`}>
                         {/* Subtle shine effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-                        <span className="text-white text-xl relative z-10">{icon}</span>
+                        <Icon className="w-5 h-5 text-white relative z-10" />
                     </div>
                 </div>
 

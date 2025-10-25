@@ -6,8 +6,12 @@ import { Button } from "@/components/ui/button"
 import { navbarData } from "@/constants/navigation"
 import { Menu, X } from "lucide-react"
 
-const Navbar = () => {
-    const { logo, brand, navLinks, buttons, mobileLinks } = navbarData
+interface NavbarProps {
+    inLanding?: boolean;
+}
+
+const Navbar = ({ inLanding = false }: NavbarProps) => {
+    const { logo, brand, navLinks, buttons } = navbarData
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [lastScrollY, setLastScrollY] = useState(0)
     const [showNavbar, setShowNavbar] = useState(true)
@@ -33,11 +37,64 @@ const Navbar = () => {
     }, [lastScrollY])
 
     const handleNavigation = (link: typeof navLinks[0]) => {
-        if (link.type === 'scroll') {
+        if (inLanding && link.type === 'scroll') {
             const element = document.getElementById(link.target);
             if (element) element.scrollIntoView({ behavior: 'smooth' });
         }
         setIsMobileMenuOpen(false)
+    }
+
+    const renderNavLink = (link: typeof navLinks[0]) => {
+        // If we're in landing page and it's a scroll link, use button with scroll
+        if (inLanding && link.type === 'scroll') {
+            return (
+                <button
+                    key={link.label}
+                    onClick={() => handleNavigation(link)}
+                    className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-300 rounded-lg hover:bg-gray-100/50"
+                >
+                    {link.label}
+                </button>
+            )
+        }
+
+        // If not in landing page or it's not a scroll link, use regular Link
+        return (
+            <Link
+                key={link.label}
+                href={link.type === 'scroll' ? `/#${link.target}` : link.type}
+                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-300 rounded-lg hover:bg-gray-100/50"
+            >
+                {link.label}
+            </Link>
+        )
+    }
+
+    const renderMobileNavLink = (link: typeof navLinks[0]) => {
+        // If we're in landing page and it's a scroll link, use button with scroll
+        if (inLanding && link.type === 'scroll') {
+            return (
+                <button
+                    key={link.label}
+                    onClick={() => handleNavigation(link)}
+                    className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 transition-colors duration-300 rounded-lg"
+                >
+                    {link.label}
+                </button>
+            )
+        }
+
+        // If not in landing page or it's not a scroll link, use regular Link
+        return (
+            <Link
+                key={link.label}
+                href={link.type === 'scroll' ? `/#${link.target}` : link.type}
+                className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 transition-colors duration-300 rounded-lg"
+                onClick={() => setIsMobileMenuOpen(false)}
+            >
+                {link.label}
+            </Link>
+        )
     }
 
     const renderButton = (button: typeof buttons[0]) => {
@@ -93,15 +150,7 @@ const Navbar = () => {
 
                     {/* Navigation Links - Desktop */}
                     <div className="hidden md:flex items-center gap-1">
-                        {navLinks.map((link) => (
-                            <button
-                                key={link.label}
-                                onClick={() => handleNavigation(link)}
-                                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-300 rounded-lg hover:bg-gray-100/50"
-                            >
-                                {link.label}
-                            </button>
-                        ))}
+                        {navLinks.map(renderNavLink)}
                     </div>
 
                     {/* CTA Buttons - Desktop */}
@@ -126,16 +175,8 @@ const Navbar = () => {
                 {isMobileMenuOpen && (
                     <div className="md:hidden mt-3 pb-2 border-t border-gray-200 pt-3">
                         {/* Compact Mobile Navigation Links */}
-                        <div className="space-y-1 mb-3">
-                            {navLinks.map((link) => (
-                                <button
-                                    key={link.label}
-                                    onClick={() => handleNavigation(link)}
-                                    className="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 transition-colors duration-300 rounded-lg"
-                                >
-                                    {link.label}
-                                </button>
-                            ))}
+                        <div className="flex flex-col items-center space-y-1 mb-3">
+                            {navLinks.map(renderMobileNavLink)}
                         </div>
 
                         {/* Compact Mobile CTA Buttons */}
@@ -161,6 +202,7 @@ const Navbar = () => {
                                                 ? 'bg-black text-white hover:bg-gray-800'
                                                 : 'border border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50'
                                                 }`}
+                                            onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             {button.label}
                                         </Link>
@@ -171,22 +213,7 @@ const Navbar = () => {
                     </div>
                 )}
 
-                {/* Simple Mobile Navigation - Hidden when menu is open */}
-                {!isMobileMenuOpen && (
-                    <div className="md:hidden flex justify-center mt-2 pt-2 border-t border-gray-200">
-                        <div className="flex gap-3">
-                            {mobileLinks.map((link) => (
-                                <button
-                                    key={link.label}
-                                    onClick={() => handleNavigation(link)}
-                                    className="text-xs text-gray-600 hover:text-gray-900 transition-colors duration-300 px-2 py-1"
-                                >
-                                    {link.label}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                )}
+                {/* Removed the simple mobile navigation since it's already in hamburger menu */}
             </div>
         </div>
     )

@@ -10,7 +10,7 @@ const Features = () => {
                     ⚡ POWERFUL FEATURES
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight mb-3 max-w-3xl">
-                    Powerful Features for <span className="font-medium">Complete Control</span>
+                    Powerful Features for <span className="font-bold">Complete Control</span>
                 </h1>
                 <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl">
                     Designed to simplify library management and save your time

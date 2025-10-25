@@ -152,9 +152,9 @@ Sent from Libly.Space Contact Form
                         <div className="grid grid-cols-2 gap-4 mt-6">
                             {[
                                 { number: "24h", label: "Avg Response", color: "text-blue-600" },
-                                { number: "1000+", label: "Libraries", color: "text-sky-600" },
-                                { number: "99%", label: "Satisfaction", color: "text-green-600" },
-                                { number: "5min", label: "Setup Time", color: "text-blue-500" }
+                                { number: "Pro", label: "New Features", color: "text-sky-600" },
+                                { number: "High", label: "Satisfaction", color: "text-green-600" },
+                                { number: "Fast", label: "Setup Time", color: "text-blue-500" }
                             ].map((stat, index) => (
                                 <div key={index} className="text-center p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-blue-100 group hover:shadow-lg transition-all duration-300">
                                     <div className={`text-lg font-bold ${stat.color} group-hover:scale-110 transition-transform duration-300`}>{stat.number}</div>

@@ -54,7 +54,7 @@ export const footerData: FooterData = {
             links: [
                 { label: 'About Us', type: 'page', href: '/about-us' },
                 { label: 'Contact', type: 'page', href: '/contact' },
-                { label: 'Support', type: 'email', href: 'mailto:support@libly.space' },
+                { label: 'Support', type: 'email', href: 'mailto:liblyspace@gmail.com' },
                 { label: 'Careers', type: 'page', href: '/careers' }
             ]
         },
@@ -72,7 +72,7 @@ export const footerData: FooterData = {
         {
             icon: '📧',
             title: 'Email',
-            value: 'support@libly.space',
+            value: 'liblyspace@gmail.com',
             type: 'email'
         },
         {

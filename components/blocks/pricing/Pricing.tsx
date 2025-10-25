@@ -16,7 +16,7 @@ export function Pricing() {
                         💰 PRICING
                     </div>
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight mb-3 max-w-3xl">
-                        Simple, Transparent <span className="font-medium bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">Pricing</span>
+                        Simple, Transparent <span className="font-bold bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">Pricing</span>
                     </h1>
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl">
                         Start free, upgrade when you grow

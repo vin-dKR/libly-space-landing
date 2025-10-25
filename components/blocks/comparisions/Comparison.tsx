@@ -10,7 +10,7 @@ const Comparison = () => {
                     ⚡ MODERN SOLUTION
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight mb-4 max-w-4xl">
-                    Stop Wasting Time on <span className="font-medium bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">Outdated Methods</span>
+                    Stop Wasting Time on <span className="font-bold bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">Outdated Methods</span>
                 </h1>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl">
                     Transform chaotic manual processes into streamlined automation

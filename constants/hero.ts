@@ -21,7 +21,7 @@ export const heroData: HeroData = {
         ]
     },
     trustBadge: {
-        content: "Trusted by Modern Libraries Worldwide",
+        content: "Now Worldwide",
         icon: "⭐"
     },
     headline: {
@@ -53,7 +53,7 @@ export const heroData: HeroData = {
     },
     dashboard: {
         image: {
-            src: "/images/hero-dashboard.png",
+            src: "/images/libly-space-logo.png",
             alt: "Libly Space Dashboard",
             width: 1200,
             height: 675
@@ -65,8 +65,8 @@ export const heroData: HeroData = {
                 position: "top-left"
             },
             {
-                value: "1000+",
-                label: "Libraries",
+                value: "Try Now",
+                label: "Start Managing Smarter",
                 position: "bottom-right"
             }
         ],

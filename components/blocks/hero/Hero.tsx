@@ -100,9 +100,9 @@ const Hero = () => {
 
                     {/* Main Content */}
                     <div className="space-y-4 sm:space-y-6 max-w-4xl">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-dmSansBold tracking-tight">
                             {headline.part1}{" "}
-                            <span className="block mt-2 font-medium bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
+                            <span className="block mt-2 font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                                 {headline.part2}
                             </span>
                         </h1>
@@ -136,7 +136,7 @@ const Hero = () => {
                                     alt={dashboard.image.alt}
                                     width={dashboard.image.width}
                                     height={dashboard.image.height}
-                                    className="w-full h-auto object-contain mx-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                                    className="w-full h-auto object-contain mx-auto opacity-98 hover:opacity-100 transition-opacity duration-300"
                                     priority
                                 />
                             </div>

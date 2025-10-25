@@ -34,7 +34,7 @@ const CTASection = () => {
 
                             {/* Main Heading */}
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-white mb-4 group-hover:text-blue-100 transition-colors duration-300">
-                                Start Your <span className="font-medium bg-gradient-to-r from-blue-200 to-sky-200 bg-clip-text text-transparent">Digital Journey</span>
+                                Start Your <span className="font-bold bg-gradient-to-r from-blue-400 to-sky-200 bg-clip-text text-transparent">Digital Journey</span>
                             </h2>
 
                             {/* Subheading */}
@@ -71,22 +71,24 @@ const CTASection = () => {
                             </div>
 
                             {/* Social Proof */}
+
                             <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl border border-blue-400/20 p-4 max-w-md mx-auto group-hover:bg-blue-500/15 transition-all duration-300">
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs sm:text-sm">
                                     <div className="flex items-center gap-2 text-blue-100 group-hover:text-white transition-colors duration-300">
                                         <div className="flex">
                                             {[1, 2, 3, 4, 5].map((star) => (
-                                                <Star key={star} className="w-3 h-3 fill-yellow-400 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
+                                                <Star key={star} className="w-3 h-3 fill-blue-300 text-blue-300 group-hover:scale-110 transition-transform duration-300" />
                                             ))}
                                         </div>
-                                        <span className="text-white font-medium">4.9/5</span>
+                                        <span className="text-white font-medium">Beta Release</span>
                                     </div>
 
                                     <div className="text-blue-100 group-hover:text-white transition-colors duration-300">
-                                        Trusted by <span className="text-white font-semibold">1,000+</span> libraries
+                                        <span className="text-white font-semibold">Now onboarding</span> new libraries
                                     </div>
                                 </div>
                             </div>
+
 
                             {/* Bottom Note */}
                             <div className="mt-6">

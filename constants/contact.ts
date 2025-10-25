@@ -11,7 +11,7 @@ export const contactData: ContactPageData = {
             icon: "📧",
             title: "Email Us",
             description: "Send us an email and we'll respond within 24 hours",
-            value: "hello@libly.space",
+            value: "liblyspace@gmail.com",
             type: 'email'
         },
         {
@@ -25,14 +25,14 @@ export const contactData: ContactPageData = {
             icon: "🛠️",
             title: "Technical Support",
             description: "Get help with technical issues and platform questions",
-            value: "support@libly.space",
+            value: "liblyspace@gmail.com",
             type: 'support'
         },
         {
             icon: "💼",
             title: "Business Inquiries",
             description: "Partnerships, enterprise plans, and custom solutions",
-            value: "business@libly.space",
+            value: "liblyspace@gmail.com",
             type: 'email'
         }
     ],

@@ -82,6 +82,6 @@ export const aboutData: AboutPageData = {
     contact: {
         title: "Ready to Modernize Your Operations?",
         description: "Join hundreds of libraries and study halls that have transformed their operations with Libly.Space",
-        email: "hello@libly.space"
+        email: "liblyspace@gmail.com"
     }
 };

@@ -43,16 +43,5 @@ export const navbarData: NavbarData = {
             type: 'page'
         }
     ],
-    mobileLinks: [
-        {
-            label: 'Features',
-            type: 'scroll',
-            target: 'features'
-        },
-        {
-            label: 'Pricing',
-            type: 'scroll',
-            target: 'pricing'
-        }
-    ]
+    mobileLinks: [] // Empty since we removed the simple mobile navigation
 };

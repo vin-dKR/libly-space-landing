@@ -11,7 +11,7 @@ const WhyChoose = () => {
                         🚀 WHY WE'RE BETTER
                     </div>
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight mb-3 max-w-3xl">
-                        Why Choose <span className="font-medium">Libly Space?</span>
+                        Why Choose <span className="font-bold">libly.space?</span>
                     </h1>
                     <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xl">
                         Save time, reduce errors, and run your study library like a professional

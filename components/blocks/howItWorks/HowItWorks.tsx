@@ -10,20 +10,20 @@ const HowItWorks = () => {
                     🚀 GET STARTED
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight mb-3 max-w-3xl">
-                    How <span className="font-medium bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">libly.space</span> works?
+                    How <span className="font-bold bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">libly.space</span> works?
                 </h1>
                 <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl">
-                    Get up and running in minutes with our simple 3-step process
+                    Get up and running in minutes with our simple 4-step process
                 </p>
             </div>
 
             {/* Steps Section */}
             <div className="w-full mb-16 sm:mb-20">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8 relative">
 
                     {gettingStartedSteps.map((item) => (
                         <div key={item.id} className="group">
-                            <div className="relative rounded-2xl border border-blue-100 bg-white/80 backdrop-blur-sm p-6 sm:p-8 transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-xl h-full overflow-hidden">
+                            <div className="relative rounded-2xl border border-blue-100 bg-white/80 backdrop-blur-sm p-6 sm:p-8 transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-xl h-full overflow-hidden flex flex-col items-center text-center">
                                 {/* Animated Background */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-sky-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -32,7 +32,7 @@ const HowItWorks = () => {
 
                                 {/* Step Number with Gradient */}
                                 <div className="relative mb-6 w-fit">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-sky-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg relative overflow-hidden">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-sky-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg relative overflow-hidden mx-auto">
                                         {/* Shine Effect */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <span className="text-white font-bold text-lg relative z-10">
@@ -48,11 +48,11 @@ const HowItWorks = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="relative space-y-4">
-                                    <h3 className="font-semibold text-gray-900 text-lg mb-3 group-hover:text-gray-800 transition-colors duration-300 group-hover:translate-x-1 transform">
+                                <div className="relative space-y-4 flex-1 flex flex-col items-center justify-center w-full">
+                                    <h3 className="font-semibold text-gray-900 text-lg mb-3 group-hover:text-gray-800 transition-colors duration-300">
                                         {item.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
+                                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-500 transition-colors duration-300 max-w-md">
                                         {item.description}
                                     </p>
                                     <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 rounded-full text-xs text-blue-600 font-medium border border-blue-100 group-hover:bg-blue-100 transition-colors duration-300">
