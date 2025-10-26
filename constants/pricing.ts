@@ -1,14 +1,21 @@
 export const freeFeatures: string[] = [
     "Up to 50 students",
-    "Real-time seat tracking",
-    "Payment management",
+    "Student management",
+    "Student records",
+    "Real-time seat management",
+    "Payment tracking",
+    "Membership management",
+    "Invoice generation",
+    "WhatsApp receipt sharing",
+    "Multiple shift management",
+    "Powerful Dashboard",
     "Basic reporting",
     "Email support",
     "Training videos"
 ];
 
 export const proFeatures: string[] = [
-    "Free features +",
+    "Everything in free Plus",
     "Unlimited students",
     "Comprehensive reports & analytics",
     "Data export & backup",

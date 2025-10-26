@@ -37,8 +37,8 @@ export const comparisonPoints: ComparisonPoint[] = [
     },
     {
         id: 7,
-        traditional: "Manual recite and bill sharing",
-        liblySpace: "On click recite sharing on WhatsApp — no need to maintain billing register"
+        traditional: "Manual reciept and bill sharing",
+        liblySpace: "On click reciept sharing on WhatsApp — no need to maintain billing register"
     },
     {
         id: 8,
@@ -47,12 +47,12 @@ export const comparisonPoints: ComparisonPoint[] = [
     },
     {
         id: 9,
-        traditional: "High chance of record loss or mix-ups",
+        traditional: "No bulk or Excel import",
         liblySpace: "Cloud-based secure data storage — access anytime, anywhere"
     },
     {
         id: 10,
-        traditional: "-",
+        traditional: "High chance of record loss or mix-ups",
         liblySpace: "Easy to set up and simple to use — no tech skills needed"
     }
 ];

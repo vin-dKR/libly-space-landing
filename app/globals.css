@@ -5,6 +5,7 @@
 
 @theme {
     --font-dmSansReg: "DMSansReg", "sans-serif";
+    --font-dmSansBold: "DMSansBold", "sans-serif";
 }
 
 @theme inline {
@@ -57,6 +58,14 @@ body {
     font-weight: 400;
     font-display: swap;
     src: url("/fonts/dm-sans/DMSans-Regular.ttf") format('opentype');
+}
+
+@font-face {
+    font-family: DMSansBold;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/dm-sans/DMSans-Bold.ttf") format('opentype');
 }
 
 :root {
