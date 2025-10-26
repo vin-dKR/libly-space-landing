@@ -55,7 +55,7 @@ const Hero = () => {
                 key={stat.position}
                 className={`absolute ${positionClasses[stat.position]} z-20 group-hover:scale-110 transition-all duration-300 hover:z-30`}
             >
-                <div className={`${gradientClass} backdrop-blur-sm shadow-xl rounded-lg sm:rounded-xl lg:rounded-2xl px-2 py-1 sm:px-3 sm:py-2 lg:px-4 lg:py-3 border-2 border-white/20 text-white shadow-lg hover:shadow-2xl transition-all duration-300 min-w-[60px] sm:min-w-[100px] lg:min-w-[120px]`}>
+                <div className={`${gradientClass} backdrop-blur-sm shadow-xl rounded-lg sm:rounded-xl lg:rounded-2xl px-2 py-1 sm:px-3 sm:py-2 lg:px-4 lg:py-3 border-2 border-white/20 text-white shadow-lg hover:shadow-2xl transition-all duration-300 max-w-[60px] sm:min-w-[100px] lg:max-w-[160px]`}>
                     <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
                         <div className="flex items-center justify-center gap-1 sm:gap-2">
                             <span className="text-xs sm:text-sm lg:text-base">{stat.icon}</span>
@@ -63,7 +63,7 @@ const Hero = () => {
                                 {stat.value}
                             </div>
                         </div>
-                        <div className="text-[10px] xs:text-xs sm:text-sm font-medium opacity-90 drop-shadow-sm text-center leading-tight px-1">
+                        <div className="text-[4px] xs:text-xs sm:text-sm font-medium opacity-90 drop-shadow-sm text-center leading-tight px-1">
                             {stat.label}
                         </div>
                     </div>
