@@ -144,7 +144,7 @@ const Navbar = ({ inLanding = false }: NavbarProps) => {
                             className="group-hover:scale-110 transition-transform duration-300 w-6 h-6 sm:w-8 sm:h-8"
                         />
                         <p className="text-xl sm:text-2xl font-bold text-gray-900">
-                            <span className="font-medium">{brand.name}</span>.{brand.accent}
+                            <span className="font-bold">{brand.name}</span>.{brand.accent}
                         </p>
                     </Link>
 

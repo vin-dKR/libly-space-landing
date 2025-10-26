@@ -91,7 +91,7 @@ export function Footer() {
                                 width={28}
                                 className="w-6 h-6 sm:w-7 sm:h-7"
                             />
-                            <span className="font-medium text-xl sm:text-2xl">libly<span className="font-semibold">.space</span></span>
+                            <span className="font-bold text-xl sm:text-2xl">libly<span className="font-semibold">.space</span></span>
                         </div>
 
                         <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-md mb-3">
@@ -137,12 +137,6 @@ export function Footer() {
                     </div>
                 </div>
 
-                {/* Additional Info */}
-                <div className="text-left mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-800">
-                    <p className="text-gray-500 text-xs text-center">
-                        {footerData.additionalInfo}
-                    </p>
-                </div>
             </div>
         </footer>
     );
