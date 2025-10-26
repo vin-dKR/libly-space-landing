@@ -3,7 +3,7 @@ import { whyChoosePoints } from "@/constants/whyChoose";
 
 const WhyChoose = () => {
     return (
-        <div id="why-choose" className="w-full mx-auto py-16 sm:py-36 px-4 sm:px-6 lg:px-8 bg-black/5">
+        <div id="why-choose" className="w-full mx-auto py-16 sm:py-36 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl items-center justify-center mx-auto">
                 {/* Header Section */}
                 <div className="flex flex-col items-center text-center mb-10 sm:mb-12">

@@ -121,31 +121,6 @@ export function Footer() {
                     ))}
                 </div>
 
-                {/* Contact Info */}
-                <div className="border-t border-gray-800 pt-6 sm:pt-8 mb-6 sm:mb-8">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-sm">
-                        {footerData.contactInfo.map((contact, index) => (
-                            <div key={index} className="flex items-center justify-start sm:justify-center gap-3 text-gray-400">
-                                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-xs sm:text-sm">{contact.icon}</span>
-                                </div>
-                                <div>
-                                    <div className="text-white font-medium text-xs sm:text-sm">{contact.title}</div>
-                                    {contact.type === 'email' ? (
-                                        <a
-                                            href={`mailto:${contact.value}`}
-                                            className="hover:text-white transition-colors duration-300 text-xs sm:text-sm"
-                                        >
-                                            {contact.value}
-                                        </a>
-                                    ) : (
-                                        <div className="text-xs sm:text-sm">{contact.value}</div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
                 {/* Bottom Section */}
                 <div className="border-t border-gray-800 pt-6 px-0 lg:px-40 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -156,8 +131,8 @@ export function Footer() {
                     </div>
 
                     <div className="flex flex-wrap gap-4 sm:gap-6 text-sm">
-                        <p className="text-gray-600 text-xs">
-                            Made with ❤️ for modern education
+                        <p className="text-gray-600 text-xs sm:text-sm">
+                            Made with ❤️ in India
                         </p>
                     </div>
                 </div>

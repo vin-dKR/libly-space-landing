@@ -28,7 +28,7 @@ const FeatureCard = ({ title, description, icon: Icon, iconColor }: FeatureCardP
                     <h1 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300 text-center">
                         {title}
                     </h1>
-                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300 flex-1">
+                    <p className="text-sm text-center text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300 flex-1">
                         {description}
                     </p>
                 </div>

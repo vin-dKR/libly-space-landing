@@ -90,28 +90,21 @@ Sent from Libly.Space Contact Form
                                 {
                                     icon: <Phone className="w-5 h-5" />,
                                     title: "Call Us",
-                                    description: "+91 98765 43210",
+                                    description: "+91 9142992036",
                                     subtitle: "Mon to Fri, 9AM to 6PM",
                                     color: "bg-blue-500"
                                 },
                                 {
                                     icon: <Mail className="w-5 h-5" />,
                                     title: "Email Us",
-                                    description: "hello@libly.space",
+                                    description: "liblyspace@gmail.com",
                                     subtitle: "We reply within 24 hours",
                                     color: "bg-sky-500"
                                 },
                                 {
-                                    icon: <MapPin className="w-5 h-5" />,
-                                    title: "Visit Us",
-                                    description: "India",
-                                    subtitle: "Serving libraries nationwide",
-                                    color: "bg-blue-600"
-                                },
-                                {
                                     icon: <MessageCircle className="w-5 h-5" />,
-                                    title: "Live Chat",
-                                    description: "Start chatting",
+                                    title: "WhatsApp",
+                                    description: "9142992036",
                                     subtitle: "Available 24/7 for support",
                                     color: "bg-sky-600"
                                 }

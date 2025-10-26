@@ -62,6 +62,6 @@ export const careerData: CareerPageData = {
     contact: {
         title: "Still Interested?",
         description: "Even though we're not hiring right now, we'd love to hear from passionate individuals. Send us your resume and we'll keep you in mind for future opportunities.",
-        email: "careers@libly.space"
+        email: "liblyspace@gmail.com"
     }
 };

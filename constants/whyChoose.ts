@@ -37,7 +37,7 @@ export const whyChoosePoints: WhyChoosePoint[] = [
         id: 4,
         icon: Shield,
         title: "Secure & Reliable",
-        description: "Your data is protected with industry-standard security. You can trust Libly Space to handle sensitive student and payment information safely."
+        description: "Your data is protected with industry-standard security. You can trust Libly Space to handle your data."
     },
     {
         id: 5,

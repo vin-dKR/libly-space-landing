@@ -36,7 +36,7 @@ export const footerData: FooterData = {
     brand: {
         badge: "📚 MODERN LIBRARY MANAGEMENT",
         name: "Libly",
-        description: "Modern library and study hall management system designed for administrators who want to move beyond paper registers and spreadsheets.",
+        description: "Modern library and study hall management system designed for administrators who want to move beyond registers, spreadsheets and basic Apps.",
         status: "All systems operational"
     },
     sections: [
@@ -91,5 +91,5 @@ export const footerData: FooterData = {
         { label: 'Privacy Policy', type: 'page', href: '/privacy-policy' },
         { label: 'Terms of Service', type: 'page', href: '/terms-conditions' }
     ],
-    additionalInfo: "Designed for modern educational institutions • Built with cutting-edge technology • Secure & Reliable"
+    additionalInfo: "Designed for modern library • Built with cutting-edge technology • Secure & Reliable"
 } as const;

@@ -17,20 +17,56 @@ const Hero = () => {
 
     const renderStatCard = (stat: typeof dashboard.stats[0]) => {
         const positionClasses = {
-            'top-left': '-top-2 sm:-top-4 -left-2 sm:-left-4',
-            'top-right': '-top-2 sm:-top-4 -right-2 sm:-right-4',
-            'bottom-left': '-bottom-2 sm:-bottom-4 -left-2 sm:-left-4',
-            'bottom-right': '-bottom-2 sm:-bottom-4 -right-2 sm:-right-4'
+            'top-left': 'top-[-10px] left-[-10px] sm:top-[-15px] sm:left-[-15px] lg:top-[-20px] lg:left-[-20px]',
+            'top-right': 'top-[-10px] right-[-10px] sm:top-[-15px] sm:right-[-15px] lg:top-[-20px] lg:right-[-20px]',
+            'bottom-left': 'bottom-[-10px] left-[-10px] sm:bottom-[-15px] sm:left-[-15px] lg:bottom-[-20px] lg:left-[-20px]',
+            'bottom-right': 'bottom-[-10px] right-[-10px] sm:bottom-[-15px] sm:right-[-15px] lg:bottom-[-20px] lg:right-[-20px]',
+            'top-center': 'top-[-15px] left-1/2 transform -translate-x-1/2',
+            'bottom-center': 'bottom-[-15px] left-1/2 transform -translate-x-1/2',
+            'left-center': 'top-1/2 left-[-15px] transform -translate-y-1/2',
+            'right-center': 'top-1/2 right-[-15px] transform -translate-y-1/2',
+            'top-edge-left': 'top-[-20px] left-1/4 transform -translate-x-1/2',
+            'top-edge-right': 'top-[-20px] right-1/4 transform translate-x-1/2',
+            'bottom-edge-left': 'bottom-[-20px] left-1/4 transform -translate-x-1/2',
+            'bottom-edge-right': 'bottom-[-20px] right-1/4 transform translate-x-1/2',
+            'left-edge-top': 'top-1/4 left-[-20px] transform -translate-y-1/2',
+            'left-edge-bottom': 'bottom-1/4 left-[-20px] transform translate-y-1/2',
+            'right-edge-top': 'top-1/4 right-[-20px] transform -translate-y-1/2',
+            'right-edge-bottom': 'bottom-1/4 right-[-20px] transform translate-y-1/2'
         }
+
+        // Different gradient backgrounds for variety
+        const gradientClasses = [
+            'bg-gradient-to-br from-blue-500 to-purple-600',
+            'bg-gradient-to-br from-green-500 to-teal-600',
+            'bg-gradient-to-br from-orange-500 to-red-600',
+            'bg-gradient-to-br from-purple-500 to-pink-600',
+            'bg-gradient-to-br from-teal-500 to-blue-600',
+            'bg-gradient-to-br from-red-500 to-orange-600',
+            'bg-gradient-to-br from-indigo-500 to-purple-600',
+            'bg-gradient-to-br from-emerald-500 to-green-600'
+        ];
+
+        const gradientIndex = dashboard.stats.indexOf(stat) % gradientClasses.length;
+        const gradientClass = gradientClasses[gradientIndex];
 
         return (
             <div
                 key={stat.position}
-                className={`absolute ${positionClasses[stat.position]} z-10 group-hover:scale-110 transition-transform duration-300`}
+                className={`absolute ${positionClasses[stat.position]} z-20 group-hover:scale-110 transition-all duration-300 hover:z-30`}
             >
-                <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-xl sm:rounded-2xl px-2 py-1 sm:px-3 sm:py-2 border border-gray-200">
-                    <div className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{stat.value}</div>
-                    <div className="text-xs text-gray-600">{stat.label}</div>
+                <div className={`${gradientClass} backdrop-blur-sm shadow-xl rounded-lg sm:rounded-xl lg:rounded-2xl px-2 py-1 sm:px-3 sm:py-2 lg:px-4 lg:py-3 border-2 border-white/20 text-white shadow-lg hover:shadow-2xl transition-all duration-300 min-w-[80px] sm:min-w-[100px] lg:min-w-[120px]`}>
+                    <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
+                        <div className="flex items-center justify-center gap-1 sm:gap-2">
+                            <span className="text-xs sm:text-sm lg:text-base">{stat.icon}</span>
+                            <div className="text-xs sm:text-sm lg:text-xl text-center font-dmSansBold font-bold drop-shadow-sm leading-tight">
+                                {stat.value}
+                            </div>
+                        </div>
+                        <div className="text-[10px] xs:text-xs sm:text-sm font-medium opacity-90 drop-shadow-sm text-center leading-tight px-1">
+                            {stat.label}
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -75,7 +111,7 @@ const Hero = () => {
             <div className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-600 text-xs font-medium shadow-sm hover:shadow-md transition-all duration-300">
                 {badge.icon} <span className="text-xs">{badge.content}</span>
                 {isTrial && (
-                    <span className="text-green-600 font-semibold text-xs"> Free 14-day trial</span>
+                    <span className="text-green-600 font-semibold text-xs"> Try Now</span>
                 )}
             </div>
         </div>

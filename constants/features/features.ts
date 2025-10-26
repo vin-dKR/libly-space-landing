@@ -20,7 +20,7 @@ export const featuresList: Feature[] = [
     {
         id: 1,
         title: "Payment and Membership Tracking",
-        description: "Record and manage all membership payments effortlessly. Auto calculate membership expiry, validity and renewals. Generate and share recite through WhatsApp.",
+        description: "Record and manage all membership payments effortlessly. Auto calculate membership expiry, validity and renewals. Generate and share receipt through WhatsApp.",
         icon: CreditCard,
         iconColor: "bg-blue-500"
     }, {
@@ -50,7 +50,7 @@ export const featuresList: Feature[] = [
     }, {
         id: 6,
         title: "Import your Library Data",
-        description: "Easily import your existing library data with all your students, shifts, fees, etc… — Upload a excel sheet with all your students data and you are ready to use our platform.",
+        description: "Seamlessly bring your existing student, shift, and payment records into Libly Space. Just upload your Excel sheet — your entire setup is ready.",
         icon: Download,
         iconColor: "bg-blue-500"
     }

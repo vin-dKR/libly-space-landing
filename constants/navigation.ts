@@ -39,7 +39,7 @@ export const navbarData: NavbarData = {
         {
             label: 'Get Started',
             variant: 'default',
-            href: '/pricing',
+            href: 'https://app.libly.space/signup',
             type: 'page'
         }
     ],

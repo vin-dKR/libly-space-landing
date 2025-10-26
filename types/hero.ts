@@ -14,7 +14,11 @@ export type HeroButton = {
 export type HeroStat = {
     value: string;
     label: string;
-    position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+    position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' |
+    'top-center' | 'bottom-center' | 'left-center' | 'right-center' |
+    'top-edge-left' | 'top-edge-right' | 'bottom-edge-left' | 'bottom-edge-right' |
+    'left-edge-top' | 'left-edge-bottom' | 'right-edge-top' | 'right-edge-bottom';
+    icon: string;
 };
 
 export type HeroFloatingElement = {

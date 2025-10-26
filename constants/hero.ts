@@ -21,7 +21,7 @@ export const heroData: HeroData = {
         ]
     },
     trustBadge: {
-        content: "Now Worldwide",
+        content: "Simplify Library Operation",
         icon: "⭐"
     },
     headline: {
@@ -35,7 +35,7 @@ export const heroData: HeroData = {
             label: "Get Started Free",
             variant: "primary",
             icon: "🚀",
-            href: "/pricing"
+            href: "https://app.libly.space/signup"
         },
         {
             label: "See How It Works",
@@ -48,7 +48,7 @@ export const heroData: HeroData = {
         }
     ],
     trialBadge: {
-        content: "No credit card required • ",
+        content: "Free for Small Libraries •",
         icon: "💳"
     },
     dashboard: {
@@ -60,15 +60,35 @@ export const heroData: HeroData = {
         },
         stats: [
             {
-                value: "99.9%",
-                label: "Uptime",
-                position: "top-left"
+                value: "24/7",
+                label: "Active Support",
+                position: "top-edge-right",
+                icon: "💬"
             },
             {
-                value: "Try Now",
-                label: "Start Managing Smarter",
-                position: "bottom-right"
-            }
+                value: "₹89.5K",
+                label: "Monthly Collection",
+                position: "right-edge-top",
+                icon: "💰"
+            },
+            {
+                value: "12",
+                label: "Expiring Soon",
+                position: "left-edge-bottom",
+                icon: "⏰"
+            },
+            {
+                value: "342",
+                label: "Active Members",
+                position: "right-edge-bottom",
+                icon: "👥"
+            },
+            {
+                value: "94%",
+                label: "Seat Occupancy",
+                position: "bottom-edge-left",
+                icon: "💺"
+            },
         ],
         floatingElements: [
             {
@@ -82,6 +102,18 @@ export const heroData: HeroData = {
                 size: "w-3 h-3",
                 color: "bg-green-500",
                 animationDelay: "delay-500"
+            },
+            {
+                position: "left-1/4 top-8",
+                size: "w-2 h-2",
+                color: "bg-purple-500",
+                animationDelay: "delay-200"
+            },
+            {
+                position: "right-1/4 bottom-8",
+                size: "w-3 h-3",
+                color: "bg-orange-500",
+                animationDelay: "delay-700"
             }
         ]
     },
